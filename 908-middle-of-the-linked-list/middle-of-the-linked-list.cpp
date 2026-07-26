@@ -12,23 +12,37 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
 
-        ListNode* temp = head;
-        int cnt = 0;
-        while(temp != NULL){
-            cnt++;
-            temp = temp -> next;
-        }
-        int middleElements = (cnt/2)+1;
+        // Method - 2-> Using slow fast ptr ot Hare and tortoise method
 
-        temp = head;
-        while(temp != NULL){
-            middleElements = middleElements - 1;
-            if(middleElements == 0){
-                break;
-            }
-            temp  = temp -> next;
+        ListNode* slow = head;
+        ListNode* fast = head;
+        
+        while(fast != NULL && fast -> next != NULL){
+            slow = slow -> next;
+            fast = fast -> next -> next;
         }
-        return temp;
+        return slow;
+
+
+        // Method - 1 -> T.C = O(n) + O(n/2), S.C = O(1)  using two pass
+
+        // ListNode* temp = head;
+        // int cnt = 0;
+        // while(temp != NULL){
+        //     cnt++;
+        //     temp = temp -> next;
+        // }
+        // int middleElements = (cnt/2)+1;
+
+        // temp = head;
+        // while(temp != NULL){
+        //     middleElements = middleElements - 1;
+        //     if(middleElements == 0){
+        //         break;
+        //     }
+        //     temp  = temp -> next;
+        // }
+        // return temp;
         
 
 
