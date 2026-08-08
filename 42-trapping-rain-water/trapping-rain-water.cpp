@@ -1,6 +1,8 @@
 class Solution {
 public:
     int trap(vector<int>& height) {
+
+    //Optimal Approach : O(n)  and S.C = O(2 * n)
         int n = height.size();
         int res = 0;
 
@@ -18,5 +20,25 @@ public:
             res = res + (min(lmax[i], rmax[i]) - height[i]);
         }
         return res;
+
+
+
+    // Brute force : ->  O(n * n) and S.C = O(1)
+        // int n = height.size();
+        // int totalWater = 0;
+
+        // for(int i=0; i<n; i++){
+        //     int leftMax = 0, rightMax = 0;
+        //     for(int j = 0; j <= i; j++){
+        //         leftMax = max(leftMax, height[j]);
+        //     }
+
+        //     for(int j = i; j < n; j++){
+        //         rightMax = max(rightMax, height[j]);
+        //     }
+
+        //     totalWater += min(rightMax, leftMax) - height[i];
+        // }
+        // return totalWater;
     }
 };
