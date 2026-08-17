@@ -2,10 +2,13 @@ class Solution {
 public:
 
     long long subArrayRanges(vector<int>& nums) {
+
+        
+
+
+    // Brute force Approach
         int n = nums.size();
-
         long long total_sum  = 0;
-
         for(int i = 0; i < n; i++){
             int mini = INT_MAX;
             int maxi = INT_MIN;
