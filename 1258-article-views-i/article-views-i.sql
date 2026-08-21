@@ -5,5 +5,4 @@ SELECT
 FROM
     Views
 WHERE
-    author_id = viewer_id order by id
-;
+    author_id = viewer_id order by id ASC;
