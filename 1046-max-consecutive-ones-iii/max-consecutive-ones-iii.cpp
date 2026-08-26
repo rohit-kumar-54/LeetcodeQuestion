@@ -2,15 +2,14 @@ class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
 
-    // Method :2 => Using two pointer and 
-        int n = nums.size();
+    int n = nums.size();
         int maxLength = 0;
         int left = 0, right = 0;
         int zerosCnt = 0;
         while( right < n){
             if(nums[right] == 0) zerosCnt++;
 
-            while(zerosCnt > k){
+            if(zerosCnt > k){
                 if(nums[left] == 0){
                     zerosCnt--;
                 }
@@ -23,6 +22,28 @@ public:
             right++;
         }
         return maxLength;
+
+    // Method :2 => Using two pointer and 
+        // int n = nums.size();
+        // int maxLength = 0;
+        // int left = 0, right = 0;
+        // int zerosCnt = 0;
+        // while( right < n){
+        //     if(nums[right] == 0) zerosCnt++;
+
+        //     while(zerosCnt > k){
+        //         if(nums[left] == 0){
+        //             zerosCnt--;
+        //         }
+        //         left++;
+        //     }
+        //     if(zerosCnt <= k){
+        //         int len = right - left + 1;
+        //         maxLength = max(maxLength, len);
+        //     }
+        //     right++;
+        // }
+        // return maxLength;
 
 
 
