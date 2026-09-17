@@ -8,3 +8,4 @@ WHERE num IN (
     GROUP BY num
     HAVING COUNT(num) = 1
 );
+
