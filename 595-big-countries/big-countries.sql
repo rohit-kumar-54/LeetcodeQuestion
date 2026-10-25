@@ -11,18 +11,34 @@
 
 -- Method 2 -> using UNION
 
-SELECT 
-    name, population , area
-FROM 
-    World
-WHERE
-    area >= 3000000 
+-- SELECT 
+--     name, population , area
+-- FROM 
+--     World
+-- WHERE
+--     area >= 3000000 
 
-UNION
+-- UNION
 
+-- SELECT 
+--     name, population , area
+-- FROM 
+--     World
+-- WHERE
+--     population >= 25000000;
+
+
+
+
+
+
+
+
+
+-- Revision
 SELECT 
-    name, population , area
-FROM 
+    name, population , area 
+FROM
     World
-WHERE
-    population >= 25000000;
+WHERE 
+    area >= 3000000 OR population >= 25000000;
