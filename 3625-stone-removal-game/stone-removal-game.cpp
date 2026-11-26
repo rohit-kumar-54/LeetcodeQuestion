@@ -1,20 +1,32 @@
 class Solution {
 public:
     bool canAliceWin(int n) {
-        
-        if( n < 10) return false;
+    
+        int stone = 10;
+        bool Alice = true;
 
-        // if(n == 10) return true;
+        while( n >= stone){
+            n -= stone;
+            stone--;
+            Alice = !Alice;
+        }
+        return !Alice;
 
-        if( n >= 10 && n < 19 ) return true;
+    // My thinking    
 
-        if( n >= 19 && n < 27 ) return false;
+        // if( n < 10) return false;
 
-        if( n >= 27 && n < 34 ) return true;
-        if( n >= 34 && n < 40 ) return false;
-        if( n >= 40 && n < 45 ) return true;
-        if( n >= 45 && n < 49 ) return false;
-        return true;
+        // // if(n == 10) return true;
+
+        // if( n >= 10 && n < 19 ) return true;
+
+        // if( n >= 19 && n < 27 ) return false;
+
+        // if( n >= 27 && n < 34 ) return true;
+        // if( n >= 34 && n < 40 ) return false;
+        // if( n >= 40 && n < 45 ) return true;
+        // if( n >= 45 && n < 49 ) return false;
+        // return true;
 
     }
 };
